@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-xl">
+    <div class="max-w-7xl mx-auto p-8">
         <div class="flex items-center justify-between mb-8 pb-4 border-b border-gray-200">
             <h1 class="text-4xl font-extrabold text-gray-800 flex items-center">
                 <img src="{{ $person->avatar_url ?: 'https://placehold.co/80x80/cccccc/333333?text=No+Img' }}"
@@ -12,13 +12,13 @@
             </h1>
             @auth {{-- Apenas para usuários autenticados --}}
             <div class="flex space-x-3">
-                <a href="{{ route('people.edit', $person->id) }}" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-5 rounded-lg shadow-md transition duration-200 flex items-center">
+                <a href="{{ route('people.edit', $person->id) }}" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-5 rounded-lg shadow-sm transition duration-200 flex items-center">
                     <i class="fas fa-edit mr-2"></i> Edit Person
                 </a>
                 <form action="{{ route('people.destroy', $person->id) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja apagar (soft delete) esta pessoa e todos os seus contatos?');">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-5 rounded-lg shadow-md transition duration-200 flex items-center">
+                    <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-5 rounded-lg shadow-sm transition duration-200 flex items-center">
                         <i class="fas fa-trash-alt mr-2"></i> Delete Person
                     </button>
                 </form>
@@ -45,7 +45,7 @@
         <div class="flex justify-between items-center mb-6 pt-4 border-t border-gray-200">
             <h2 class="text-2xl font-bold text-gray-700">Contacts</h2>
             @auth {{-- Apenas para usuários autenticados --}}
-            <a href="{{ route('contacts.create', $person->id) }}" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-5 rounded-lg shadow-md transition duration-200 flex items-center">
+            <a href="{{ route('contacts.create', $person->id) }}" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-5 rounded-lg shadow-sm transition duration-200 flex items-center">
                 <i class="fas fa-plus-circle mr-2"></i> Add new Contact
             </a>
             @endauth
