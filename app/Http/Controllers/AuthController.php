@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth; // Importa a fachada Auth
-use Illuminate\Validation\ValidationException; // Para lançar exceções de validação
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
@@ -34,13 +34,13 @@ class AuthController extends Controller
 
 
             return redirect()->intended(route('people.index'))
-                ->with('success', 'Login realizado com sucesso!');
+                ->with('success', 'Login successfully!');
         }
 
         // If authentication fails, throw a validation exception
         // which will return the user to the login form with an error.
         throw ValidationException::withMessages([
-            'email' => 'As credenciais fornecidas não correspondem aos nossos registros.',
+            'email' => 'The credentials provided do not match our records.',
         ]);
     }
 
@@ -58,7 +58,7 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         // Redirects to the home page (people list) with a success message
-        return redirect()->route('people.index')->with('success', 'Logout realizado com sucesso.');
+        return redirect()->route('people.index')->with('success', 'Logout successful');
     }
 }
 

@@ -63,6 +63,12 @@
                         Cancel
                     </a>
                 </div>
+
+                <div class="mt-5">
+                    <p class="mt-2 text-sm text-gray-600">Demo info</p>
+                    <p class="mt-2 text-sm text-gray-600">email: admin@admin.com</p>
+                    <p class="mt-2 text-sm text-gray-600">pass: password</p>
+                </div>
             </form>
         </div>
     </div>

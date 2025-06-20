@@ -35,7 +35,7 @@
                 <p class="text-gray-700"><strong class="font-semibold text-gray-900">Last update:</strong> {{ $person->updated_at->format('M d, Y H:i A') }}</p>
             </div>
             <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
-                <h2 class="text-2xl font-bold text-gray-700 mb-4">About avagar</h2>
+                <h2 class="text-2xl font-bold text-gray-700 mb-4">About avatar</h2>
                 <p class="text-gray-700 mb-2">The avatar is a randomly generated monster image from <a href="https://app.pixelencounter.com" target="_blank" class="text-indigo-600 hover:underline">PixelEncounter API</a>.</p>
                 <p class="text-700">It provides a unique visual identifier for each person.</p>
                 <p class="text-gray-700 mt-2">Avatar URL: <span class="break-all text-sm text-gray-600">{{ $person->avatar_url ?: 'N/A' }}</span></p>
